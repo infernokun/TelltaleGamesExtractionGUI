@@ -13,8 +13,6 @@
         private Button inputButton;
         private Button outputButton;
         private TextBox outputTextBox;
-        private FolderBrowserDialog folderBrowserDialog1;
-        private OpenFileDialog openFileDialog1;
         private ProgressBar processBar;
         private Button runButton;
         private RadioButton extractOption;
@@ -47,8 +45,6 @@
             this.inputButton = new System.Windows.Forms.Button();
             this.outputButton = new System.Windows.Forms.Button();
             this.outputTextBox = new System.Windows.Forms.TextBox();
-            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.processBar = new System.Windows.Forms.ProgressBar();
             this.runButton = new System.Windows.Forms.Button();
             this.extractOption = new System.Windows.Forms.RadioButton();
@@ -58,35 +54,39 @@
             // title
             // 
             this.title.AutoSize = true;
-            this.title.Location = new System.Drawing.Point(365, 38);
+            this.title.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.title.Location = new System.Drawing.Point(270, 9);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(121, 15);
+            this.title.Size = new System.Drawing.Size(276, 37);
             this.title.TabIndex = 0;
             this.title.Text = "Telltale Extraction GUI";
+            this.title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.title.Click += new System.EventHandler(this.title_Click);
             // 
             // gamesList
             // 
             this.gamesList.FormattingEnabled = true;
             this.gamesList.ItemHeight = 15;
-            this.gamesList.Location = new System.Drawing.Point(220, 190);
+            this.gamesList.Location = new System.Drawing.Point(225, 164);
             this.gamesList.Name = "gamesList";
             this.gamesList.Size = new System.Drawing.Size(395, 94);
             this.gamesList.TabIndex = 1;
             this.gamesList.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+
+            populateGames();
             // 
             // inputTextBox
             // 
-            this.inputTextBox.Location = new System.Drawing.Point(98, 107);
+            this.inputTextBox.Location = new System.Drawing.Point(46, 66);
             this.inputTextBox.Name = "inputTextBox";
             this.inputTextBox.ReadOnly = true;
-            this.inputTextBox.Size = new System.Drawing.Size(482, 23);
+            this.inputTextBox.Size = new System.Drawing.Size(534, 23);
             this.inputTextBox.TabIndex = 2;
             this.inputTextBox.TextChanged += new System.EventHandler(this.inputTextBox_TextChanged);
             // 
             // inputButton
             // 
-            this.inputButton.Location = new System.Drawing.Point(622, 107);
+            this.inputButton.Location = new System.Drawing.Point(638, 66);
             this.inputButton.Name = "inputButton";
             this.inputButton.Size = new System.Drawing.Size(140, 23);
             this.inputButton.TabIndex = 3;
@@ -96,7 +96,7 @@
             // 
             // outputButton
             // 
-            this.outputButton.Location = new System.Drawing.Point(622, 147);
+            this.outputButton.Location = new System.Drawing.Point(638, 116);
             this.outputButton.Name = "outputButton";
             this.outputButton.Size = new System.Drawing.Size(140, 23);
             this.outputButton.TabIndex = 4;
@@ -106,16 +106,12 @@
             // 
             // outputTextBox
             // 
-            this.outputTextBox.Location = new System.Drawing.Point(98, 148);
+            this.outputTextBox.Location = new System.Drawing.Point(46, 116);
             this.outputTextBox.Name = "outputTextBox";
             this.outputTextBox.ReadOnly = true;
-            this.outputTextBox.Size = new System.Drawing.Size(482, 23);
+            this.outputTextBox.Size = new System.Drawing.Size(534, 23);
             this.outputTextBox.TabIndex = 5;
             this.outputTextBox.TextChanged += new System.EventHandler(this.outputTextBox_TextChanged);
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // processBar
             // 
@@ -126,7 +122,7 @@
             // 
             // runButton
             // 
-            this.runButton.Location = new System.Drawing.Point(349, 363);
+            this.runButton.Location = new System.Drawing.Point(364, 264);
             this.runButton.Name = "runButton";
             this.runButton.Size = new System.Drawing.Size(129, 23);
             this.runButton.TabIndex = 7;
@@ -137,7 +133,7 @@
             // extractOption
             // 
             this.extractOption.AutoSize = true;
-            this.extractOption.Location = new System.Drawing.Point(349, 313);
+            this.extractOption.Location = new System.Drawing.Point(270, 264);
             this.extractOption.Name = "extractOption";
             this.extractOption.Size = new System.Drawing.Size(61, 19);
             this.extractOption.TabIndex = 8;
@@ -149,7 +145,7 @@
             // buildOption
             // 
             this.buildOption.AutoSize = true;
-            this.buildOption.Location = new System.Drawing.Point(426, 313);
+            this.buildOption.Location = new System.Drawing.Point(528, 264);
             this.buildOption.Name = "buildOption";
             this.buildOption.Size = new System.Drawing.Size(52, 19);
             this.buildOption.TabIndex = 9;
@@ -158,7 +154,7 @@
             this.buildOption.UseVisualStyleBackColor = true;
             this.buildOption.CheckedChanged += new System.EventHandler(this.buildOption_CheckedChanged);
             // 
-            // TelltaleEXTGUI
+            // TelltaleEXTForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -173,15 +169,13 @@
             this.Controls.Add(this.inputTextBox);
             this.Controls.Add(this.gamesList);
             this.Controls.Add(this.title);
-            this.Name = "TelltaleEXTGUI";
+            this.Name = "TelltaleEXTForm";
             this.Text = "TelltaleExtractionGUI";
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
         #endregion
-
-        //private Program program;
 
         private void populateGames()
         {

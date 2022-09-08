@@ -29,11 +29,7 @@ namespace TelltaleEXTGUI
                 FilterIndex = 1
             };
 
-            Thread thread = new Thread(() => ofd.ShowDialog());
-
-            thread.SetApartmentState(ApartmentState.STA);
-            thread.Start();
-            thread.Join();
+            ofd.ShowDialog();
 
             if (ofd.FileName == "") { return; }
 
@@ -47,10 +43,8 @@ namespace TelltaleEXTGUI
                 Description = "Select Extraction Folder",
                 InitialDirectory = Directory.GetCurrentDirectory()
             };
-            Thread thread = new Thread(() => fbd.ShowDialog());
-            thread.SetApartmentState(ApartmentState.STA);
-            thread.Start();
-            thread.Join();
+
+            fbd.ShowDialog();
 
             if (fbd.SelectedPath == "") { return; }
 
@@ -86,10 +80,8 @@ namespace TelltaleEXTGUI
                 return;
             }
 
-            Thread thread = new Thread(() => Process.Start(Directory.GetCurrentDirectory() + "\\ttarchext\\ttarchext.exe"));
-            thread.SetApartmentState (ApartmentState.STA);
-            thread.Start();
-            thread.Join();
+            Process.Start(Directory.GetCurrentDirectory() + "\\ttarchext\\ttarchext.exe");
+
         }
 
         private void title_Click(object sender, EventArgs e)
