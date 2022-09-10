@@ -1,0 +1,17 @@
+C:\Users\infer\source\repos\TelltaleEXTGUI\TelltaleEXTGUI\bin\Debug\net6.0-windows\TelltaleEXTGUI.exe
+C:\Users\infer\source\repos\TelltaleEXTGUI\TelltaleEXTGUI\bin\Debug\net6.0-windows\TelltaleEXTGUI.deps.json
+C:\Users\infer\source\repos\TelltaleEXTGUI\TelltaleEXTGUI\bin\Debug\net6.0-windows\TelltaleEXTGUI.runtimeconfig.json
+C:\Users\infer\source\repos\TelltaleEXTGUI\TelltaleEXTGUI\bin\Debug\net6.0-windows\TelltaleEXTGUI.dll
+C:\Users\infer\source\repos\TelltaleEXTGUI\TelltaleEXTGUI\bin\Debug\net6.0-windows\ref\TelltaleEXTGUI.dll
+C:\Users\infer\source\repos\TelltaleEXTGUI\TelltaleEXTGUI\bin\Debug\net6.0-windows\TelltaleEXTGUI.pdb
+C:\Users\infer\source\repos\TelltaleEXTGUI\TelltaleEXTGUI\obj\Debug\net6.0-windows\TelltaleEXTGUI.csproj.AssemblyReference.cache
+C:\Users\infer\source\repos\TelltaleEXTGUI\TelltaleEXTGUI\obj\Debug\net6.0-windows\TelltaleEXTGUI.TelltaleEXTForm.resources
+C:\Users\infer\source\repos\TelltaleEXTGUI\TelltaleEXTGUI\obj\Debug\net6.0-windows\TelltaleEXTGUI.csproj.GenerateResource.cache
+C:\Users\infer\source\repos\TelltaleEXTGUI\TelltaleEXTGUI\obj\Debug\net6.0-windows\TelltaleEXTGUI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\infer\source\repos\TelltaleEXTGUI\TelltaleEXTGUI\obj\Debug\net6.0-windows\TelltaleEXTGUI.AssemblyInfoInputs.cache
+C:\Users\infer\source\repos\TelltaleEXTGUI\TelltaleEXTGUI\obj\Debug\net6.0-windows\TelltaleEXTGUI.AssemblyInfo.cs
+C:\Users\infer\source\repos\TelltaleEXTGUI\TelltaleEXTGUI\obj\Debug\net6.0-windows\TelltaleEXTGUI.csproj.CoreCompileInputs.cache
+C:\Users\infer\source\repos\TelltaleEXTGUI\TelltaleEXTGUI\obj\Debug\net6.0-windows\TelltaleEXTGUI.dll
+C:\Users\infer\source\repos\TelltaleEXTGUI\TelltaleEXTGUI\obj\Debug\net6.0-windows\ref\TelltaleEXTGUI.dll
+C:\Users\infer\source\repos\TelltaleEXTGUI\TelltaleEXTGUI\obj\Debug\net6.0-windows\TelltaleEXTGUI.pdb
+C:\Users\infer\source\repos\TelltaleEXTGUI\TelltaleEXTGUI\obj\Debug\net6.0-windows\TelltaleEXTGUI.genruntimeconfig.cache

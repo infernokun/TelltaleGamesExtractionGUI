@@ -86,7 +86,6 @@ namespace TelltaleEXTGUI
             Application.Run(new TelltaleEXTForm());
 
             Console.WriteLine(Directory.GetCurrentDirectory() + "\\ttarchext\\ttarchext.exe");
-            //Process.Start(Directory.GetCurrentDirectory() + "\\ttarchext\\ttarchext.exe");
         }
     }
 }

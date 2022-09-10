@@ -18,6 +18,7 @@
         private RadioButton extractOption;
         private RadioButton buildOption;
 
+
         /// <summary>
         ///  Clean up any resources being used.
         /// </summary>
@@ -67,13 +68,11 @@
             // 
             this.gamesList.FormattingEnabled = true;
             this.gamesList.ItemHeight = 15;
-            this.gamesList.Location = new System.Drawing.Point(225, 164);
+            this.gamesList.Location = new System.Drawing.Point(225, 154);
             this.gamesList.Name = "gamesList";
             this.gamesList.Size = new System.Drawing.Size(395, 94);
             this.gamesList.TabIndex = 1;
             this.gamesList.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-
-            populateGames();
             // 
             // inputTextBox
             // 

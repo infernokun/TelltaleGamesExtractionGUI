@@ -78,6 +78,7 @@ namespace TelltaleEXTGUI
 
                 //Console.WriteLine("--\niBox: " + inputTextBox.Text + "\noBox: " + outputTextBox.Text == "\nexOption: " + extractOption.Checked + "\nbOption: " + buildOption.Checked + "\ngList: " + gamesList.SelectedItem); return;
                 return;
+
             }
 
             Process.Start(Directory.GetCurrentDirectory() + "\\ttarchext\\ttarchext.exe");
