@@ -8,28 +8,28 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\infer\\.nuget\\packages\\": {},
+    "C:\\Users\\InfernoKun-WIN\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\infer\\source\\repos\\TelltaleEXTGUI\\TelltaleEXTGUI\\TelltaleEXTGUI.csproj",
+      "projectUniqueName": "C:\\Users\\InfernoKun-WIN\\Desktop\\TelltaleEXTGUI\\TelltaleEXTGUI\\TelltaleEXTGUI.csproj",
       "projectName": "TelltaleEXTGUI",
-      "projectPath": "C:\\Users\\infer\\source\\repos\\TelltaleEXTGUI\\TelltaleEXTGUI\\TelltaleEXTGUI.csproj",
-      "packagesPath": "C:\\Users\\infer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\infer\\source\\repos\\TelltaleEXTGUI\\TelltaleEXTGUI\\obj\\",
+      "projectPath": "C:\\Users\\InfernoKun-WIN\\Desktop\\TelltaleEXTGUI\\TelltaleEXTGUI\\TelltaleEXTGUI.csproj",
+      "packagesPath": "C:\\Users\\InfernoKun-WIN\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\InfernoKun-WIN\\Desktop\\TelltaleEXTGUI\\TelltaleEXTGUI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\infer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\InfernoKun-WIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0-windows7.0"
+        "net6.0-windows"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -56,7 +56,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -68,7 +69,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\infer\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\infer\\.nuget\\packages",
+      "C:\\Users\\InfernoKun-WIN\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\InfernoKun-WIN\\.nuget\\packages",
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ],
     "configProperties": {

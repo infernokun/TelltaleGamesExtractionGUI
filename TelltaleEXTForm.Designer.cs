@@ -7,16 +7,32 @@
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
+        // Title
         private Label title;
+
+        // Games List
         private ListBox gamesList;
-        private TextBox inputTextBox;
+
+        // Buttons
         private Button inputButton;
         private Button outputButton;
-        private TextBox outputTextBox;
-        private ProgressBar processBar;
         private Button runButton;
+
+        // Path Boxes
+        private TextBox inputTextBox;
+        private TextBox outputTextBox;
+
+        // Program Output
+        private TextBox programOutput;
+
+        // Progress Bar
+        private ProgressBar processBar;
+        
+        // Radio Buttons
         private RadioButton extractOption;
         private RadioButton buildOption;
+
+
 
 
         /// <summary>
@@ -50,6 +66,7 @@
             this.runButton = new System.Windows.Forms.Button();
             this.extractOption = new System.Windows.Forms.RadioButton();
             this.buildOption = new System.Windows.Forms.RadioButton();
+            this.programOutput = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // title
@@ -68,24 +85,24 @@
             // 
             this.gamesList.FormattingEnabled = true;
             this.gamesList.ItemHeight = 15;
-            this.gamesList.Location = new System.Drawing.Point(225, 154);
+            this.gamesList.Location = new System.Drawing.Point(265, 141);
             this.gamesList.Name = "gamesList";
-            this.gamesList.Size = new System.Drawing.Size(395, 94);
+            this.gamesList.Size = new System.Drawing.Size(361, 94);
             this.gamesList.TabIndex = 1;
-            this.gamesList.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.gamesList.SelectedIndexChanged += new System.EventHandler(this.gamesList_SelectedIndexChanged);
             // 
             // inputTextBox
             // 
-            this.inputTextBox.Location = new System.Drawing.Point(46, 66);
+            this.inputTextBox.Location = new System.Drawing.Point(29, 74);
             this.inputTextBox.Name = "inputTextBox";
             this.inputTextBox.ReadOnly = true;
-            this.inputTextBox.Size = new System.Drawing.Size(534, 23);
+            this.inputTextBox.Size = new System.Drawing.Size(597, 23);
             this.inputTextBox.TabIndex = 2;
             this.inputTextBox.TextChanged += new System.EventHandler(this.inputTextBox_TextChanged);
             // 
             // inputButton
             // 
-            this.inputButton.Location = new System.Drawing.Point(638, 66);
+            this.inputButton.Location = new System.Drawing.Point(647, 74);
             this.inputButton.Name = "inputButton";
             this.inputButton.Size = new System.Drawing.Size(140, 23);
             this.inputButton.TabIndex = 3;
@@ -95,7 +112,7 @@
             // 
             // outputButton
             // 
-            this.outputButton.Location = new System.Drawing.Point(638, 116);
+            this.outputButton.Location = new System.Drawing.Point(647, 112);
             this.outputButton.Name = "outputButton";
             this.outputButton.Size = new System.Drawing.Size(140, 23);
             this.outputButton.TabIndex = 4;
@@ -105,23 +122,23 @@
             // 
             // outputTextBox
             // 
-            this.outputTextBox.Location = new System.Drawing.Point(46, 116);
+            this.outputTextBox.Location = new System.Drawing.Point(29, 112);
             this.outputTextBox.Name = "outputTextBox";
             this.outputTextBox.ReadOnly = true;
-            this.outputTextBox.Size = new System.Drawing.Size(534, 23);
+            this.outputTextBox.Size = new System.Drawing.Size(597, 23);
             this.outputTextBox.TabIndex = 5;
             this.outputTextBox.TextChanged += new System.EventHandler(this.outputTextBox_TextChanged);
             // 
             // processBar
             // 
-            this.processBar.Location = new System.Drawing.Point(46, 430);
+            this.processBar.Location = new System.Drawing.Point(46, 529);
             this.processBar.Name = "processBar";
-            this.processBar.Size = new System.Drawing.Size(732, 23);
+            this.processBar.Size = new System.Drawing.Size(719, 23);
             this.processBar.TabIndex = 6;
             // 
             // runButton
             // 
-            this.runButton.Location = new System.Drawing.Point(364, 264);
+            this.runButton.Location = new System.Drawing.Point(379, 241);
             this.runButton.Name = "runButton";
             this.runButton.Size = new System.Drawing.Size(129, 23);
             this.runButton.TabIndex = 7;
@@ -132,7 +149,7 @@
             // extractOption
             // 
             this.extractOption.AutoSize = true;
-            this.extractOption.Location = new System.Drawing.Point(270, 264);
+            this.extractOption.Location = new System.Drawing.Point(306, 49);
             this.extractOption.Name = "extractOption";
             this.extractOption.Size = new System.Drawing.Size(61, 19);
             this.extractOption.TabIndex = 8;
@@ -144,7 +161,7 @@
             // buildOption
             // 
             this.buildOption.AutoSize = true;
-            this.buildOption.Location = new System.Drawing.Point(528, 264);
+            this.buildOption.Location = new System.Drawing.Point(456, 49);
             this.buildOption.Name = "buildOption";
             this.buildOption.Size = new System.Drawing.Size(52, 19);
             this.buildOption.TabIndex = 9;
@@ -153,11 +170,23 @@
             this.buildOption.UseVisualStyleBackColor = true;
             this.buildOption.CheckedChanged += new System.EventHandler(this.buildOption_CheckedChanged);
             // 
+            // programOutput
+            // 
+            this.programOutput.Location = new System.Drawing.Point(29, 286);
+            this.programOutput.Multiline = true;
+            this.programOutput.Name = "programOutput";
+            this.programOutput.ReadOnly = true;
+            this.programOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.programOutput.Size = new System.Drawing.Size(1095, 237);
+            this.programOutput.TabIndex = 10;
+            this.programOutput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // TelltaleEXTForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(820, 465);
+            this.ClientSize = new System.Drawing.Size(1136, 564);
+            this.Controls.Add(this.programOutput);
             this.Controls.Add(this.buildOption);
             this.Controls.Add(this.extractOption);
             this.Controls.Add(this.runButton);
