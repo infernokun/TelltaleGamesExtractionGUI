@@ -4,31 +4,42 @@ namespace TelltaleEXTGUI
 {
     public partial class TelltaleEXTForm : Form
     {
-        private SynchronizationContext _syncContext;
+        private SynchronizationContext? _syncContext;
 
         public TelltaleEXTForm()
         {
             InitializeComponent();
+
+            // update gamesList selection box
+            GamesList.BeginUpdate();
+            foreach (String s in TelltaleEXTMain.GAMES)
+            {
+                GamesList.Items.Add(s);
+
+            }
+            GamesList.EndUpdate();
+
             _syncContext = SynchronizationContext.Current;
         }
 
-        private void inputTextBox_TextChanged(object sender, EventArgs e)
+        private void InputTextBox_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void outputTextBox_TextChanged(object sender, EventArgs e)
+        private void OutputTextBox_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void inputButton_Click(object sender, EventArgs e)
+
+        private void InputButton_Click(object sender, EventArgs e)
         {
+            // an option must be checked before selecting a file/folder
+            if (!ExtractOption.Checked && !BuildOption.Checked) { return; }
 
-            if (!extractOption.Checked && !buildOption.Checked) { return; }
-
-            if (extractOption.Checked)
-            {
+            if (ExtractOption.Checked)
+            { //if extract is checked
                 // open an input file
                 OpenFileDialog ofd = new OpenFileDialog
                 {
@@ -40,13 +51,13 @@ namespace TelltaleEXTGUI
 
                 ofd.ShowDialog();
 
+                // do nothing if nothing chosen
                 if (ofd.FileName == "") { return; }
 
-                inputTextBox.Text = ofd.FileName;
-                Console.WriteLine(ofd.FileName);
+                InputTextBox.Text = ofd.FileName;
                 
             } else
-            {
+            {// if build is cheked
                 // open an output folder
                 FolderBrowserDialog fbd = new FolderBrowserDialog()
                 {
@@ -56,18 +67,22 @@ namespace TelltaleEXTGUI
 
                 fbd.ShowDialog();
 
+                // do nothing if nothing is chosen
                 if (fbd.SelectedPath == "") { return; }
 
-                inputTextBox.Text = fbd.SelectedPath;
+                InputTextBox.Text = fbd.SelectedPath;
             }
         }
 
-        private void outputButton_Click(object sender, EventArgs e)
+        private void OutputButton_Click(object sender, EventArgs e)
         {
-            if (!extractOption.Checked && !buildOption.Checked) { return; }
+            // an option must be checked before selecting a file/folder
+            if (!ExtractOption.Checked && !BuildOption.Checked) { return; }
 
-            if (extractOption.Checked)
-            {
+            
+            if (ExtractOption.Checked)
+            { // if extract option is checked
+                //open folder dialog box
                 FolderBrowserDialog fbd = new FolderBrowserDialog()
                 {
                     Description = "Select Extraction Folder",
@@ -76,12 +91,14 @@ namespace TelltaleEXTGUI
 
                 fbd.ShowDialog();
 
+                // if nothing is chosen do nothing
                 if (fbd.SelectedPath == "") { return; }
 
-                outputTextBox.Text = fbd.SelectedPath;
+                OutputTextBox.Text = fbd.SelectedPath;
 
             } else
-            {
+            {// if build option is checked
+                // open save file dialog box
                 SaveFileDialog sfd = new SaveFileDialog()
                 {
                     Title = "Save TTARCH File As",
@@ -91,62 +108,78 @@ namespace TelltaleEXTGUI
 
                 sfd.ShowDialog();
 
+                // if nothing is chosen do nothing
                 if (sfd.FileName == "") { return; }
 
-                outputTextBox.Text = sfd.FileName;
+                OutputTextBox.Text = sfd.FileName;
             }
             
         }
 
-        private void gamesList_SelectedIndexChanged(object sender, EventArgs e)
+        private void GamesList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Console.WriteLine();
         }
 
-        private void extractOption_CheckedChanged(object sender, EventArgs e)
+        private void ExtractOption_CheckedChanged(object sender, EventArgs e)
         {
-            if (extractOption.Checked)
-            {
-                // allow for input file to output directory
-                inputButton.Text = "Select Input File";
-                outputButton.Text = "Select Output Folder";
+            if (ExtractOption.Checked)
+            { // if extract option is checked 
+                // change text to fit operation
+                // input = file, output = folder
+                InputButton.Text = "Select Input File";
+                OutputButton.Text = "Select Output Folder";
 
-                inputTextBox.Text = "";
-                outputTextBox.Text = "";
+                // reset path text
+                InputTextBox.Text = "";
+                OutputTextBox.Text = "";
             }
         }
 
-        private void buildOption_CheckedChanged(object sender, EventArgs e)
+        private void BuildOption_CheckedChanged(object sender, EventArgs e)
         {
-            if (buildOption.Checked)
-            {
-                // allow input directory to output file
-                inputButton.Text = "Select Input Folder";
-                outputButton.Text = "Select Output File";
+            if (BuildOption.Checked)
+            { // if build option is checked
+                // change text to fit operation
+                // input = folder, output = file
+                InputButton.Text = "Select Input Folder";
+                OutputButton.Text = "Select Output File";
 
-                inputTextBox.Text = "";
-                outputTextBox.Text = "";
+                // reset path text
+                InputTextBox.Text = "";
+                OutputTextBox.Text = "";
             }
         }
 
-        private void runButton_Click(object sender, EventArgs e)
+        private void RunButton_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("--\niBox: " + inputTextBox.Text + "\noBox: " + outputTextBox.Text + "\nexOption: " + extractOption.Checked + "\nbOption: " + buildOption.Checked + "\ngList: " + gamesList.SelectedItem + TelltaleEXTMain.GAMES.IndexOf((string)gamesList.SelectedItem) + "\n--");
-
-            if (inputTextBox.Text == "" ||
-                outputTextBox.Text == "" ||
-                (extractOption.Checked && buildOption.Checked) ||
-                gamesList.SelectedItem == null)
+            // check if all values are filled in
+            if (InputTextBox.Text == "" ||
+                OutputTextBox.Text == "" ||
+                (ExtractOption.Checked && BuildOption.Checked) ||
+                GamesList.SelectedItem == null)
             {
 
-                Console.WriteLine("--\niBox: " + inputTextBox.Text + "\noBox: " + outputTextBox.Text == "\nexOption: " + extractOption.Checked + "\nbOption: " + buildOption.Checked + "\ngList: " + gamesList.SelectedItem); return;
+                Console.WriteLine("--\niBox: " + InputTextBox.Text + "\noBox: " + OutputTextBox.Text == "\nexOption: " + ExtractOption.Checked + "\nbOption: " + BuildOption.Checked + "\ngList: " + GamesList.SelectedItem); return;
 
             }
 
+            // execution path and args
             string file = Directory.GetCurrentDirectory() + "\\ttarchext\\ttarchext.exe";
+            string args;
 
-            string args = " " + gamesList.SelectedIndex + " " + inputTextBox.Text + " " + outputTextBox.Text;
+            if (BuildOption.Checked)
+            {// if build option
+                // run required build args
+                // ttarchext.exe -b -V 7 # "folder" file.ttarch
+                args = " -b -V 7 " + GamesList.SelectedIndex + " " + OutputTextBox.Text + " " + InputTextBox.Text;
+            }else
+            {// if extract option
+                // run required extract option
+                // ttarchext.exe # "file.ttarch" folder
+                args = " " + GamesList.SelectedIndex + " " + InputTextBox.Text + " " + OutputTextBox.Text;
+            }
 
+            // init process for execution
             using (var process = new Process
             {
                 StartInfo = new ProcessStartInfo
@@ -166,28 +199,21 @@ namespace TelltaleEXTGUI
             }
 
             Console.WriteLine(args);
-
-            /*var proc = new Process();
-            proc.StartInfo.FileName = file;
-            proc.Start();*/
-
         }
 
         // dynamic console output 
         void Display(string output)
         {
-            _syncContext.Post(_ => programOutput.AppendText(output), null);
+            if (_syncContext != null)
+            {
+                _syncContext.Post(_ => ProgramOutput.AppendText(output), null);
+            }
+            
         }
 
-        private void Process_OutputDataReceived(object sender, DataReceivedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+        private void Process_OutputDataReceived(object sender, DataReceivedEventArgs e) => throw new NotImplementedException();
 
-        private void title_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+        private void Title_Click(object sender, EventArgs e) => throw new NotImplementedException();
 
     }
 }
